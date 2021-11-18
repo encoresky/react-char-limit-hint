@@ -37,7 +37,7 @@ function CharLimitInput(_ref) {
       charLimit = _ref.charLimit,
       props = _objectWithoutProperties(_ref, _excluded);
 
-  var parsedIntCharLimit = parseInt(charLimit || 0);
+  var parsedIntCharLimit = parseInt(charLimit || 10) || 10;
 
   var _React$useState = _react.default.useState(""),
       _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -48,6 +48,18 @@ function CharLimitInput(_ref) {
       _React$useState4 = _slicedToArray(_React$useState3, 2),
       remainingCount = _React$useState4[0],
       setRemainingCount = _React$useState4[1];
+
+  _react.default.useEffect(function () {
+    if (value.length > parsedIntCharLimit) {
+      var remainingText = value.slice(0, parsedIntCharLimit);
+      setValue(remainingText);
+      onChange(remainingText);
+      setRemainingCount(parsedIntCharLimit - remainingText.length);
+    } else {
+      var remaining_count = parsedIntCharLimit - value.length;
+      setRemainingCount(remaining_count > -1 ? remaining_count : 0);
+    }
+  }, [parsedIntCharLimit]);
 
   var onTextChange = function onTextChange(event) {
     var remaining_count = parsedIntCharLimit - event.target.value.length;
@@ -68,7 +80,7 @@ function CharLimitInput(_ref) {
     className: inputStyle,
     value: value,
     onChange: onTextChange,
-    maxLength: charLimit
+    maxLength: parsedIntCharLimit
   }, restProps)), /*#__PURE__*/_react.default.createElement("span", {
     className: hintStyle
   }, remainingCount, " words are remaining"));
