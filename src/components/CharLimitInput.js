@@ -12,7 +12,7 @@ export default function CharLimitInput({ onChange, charLimit, ...props }) {
       const remainingText = value.slice(0, parsedIntCharLimit)
 
       setValue(remainingText);
-      onChange(remainingText);
+      onChange && onChange(remainingText);
       setRemainingCount(parsedIntCharLimit - remainingText.length);
     } else {
       const remaining_count = parsedIntCharLimit - value.length;
@@ -26,7 +26,7 @@ export default function CharLimitInput({ onChange, charLimit, ...props }) {
 
     setRemainingCount(remaining_count);
     setValue(event.target.value)
-    onChange(event.target.value);
+    onChange && onChange(event.target.value);
   }
 
   const { hintStyle, inputStyle, parentContainerStyle, ...restProps } = props;
