@@ -53,7 +53,7 @@ function CharLimitInput(_ref) {
     if (value.length > parsedIntCharLimit) {
       var remainingText = value.slice(0, parsedIntCharLimit);
       setValue(remainingText);
-      onChange(remainingText);
+      onChange && onChange(remainingText);
       setRemainingCount(parsedIntCharLimit - remainingText.length);
     } else {
       var remaining_count = parsedIntCharLimit - value.length;
@@ -66,7 +66,7 @@ function CharLimitInput(_ref) {
     if (remaining_count < 0) return false;
     setRemainingCount(remaining_count);
     setValue(event.target.value);
-    onChange(event.target.value);
+    onChange && onChange(event.target.value);
   };
 
   var hintStyle = props.hintStyle,
