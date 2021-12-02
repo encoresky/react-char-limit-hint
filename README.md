@@ -29,3 +29,6 @@ function App() {
 | inputStyle | string                                                     | ClassName for input component                                              |
 | hintStyle | string                                                     | ClassName for hint text component                                              |
 | onChange               | (text) => void                      | callback function 
+
+## Contributor
+[Vishal Chaturvedi](https://github.com/vishai12345)
