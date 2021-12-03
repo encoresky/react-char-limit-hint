@@ -1,6 +1,6 @@
 {
   "name": "@encoreskytech/react-char-limit-hint-input",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -86,9 +86,9 @@
     "javascript",
     "Est",
     "Encoresky Technologies pvt ltd",
-    "reactjs", 
-    "input hint", 
-    "character limit", 
+    "reactjs",
+    "input hint",
+    "character limit",
     "maximum character limit"
   ],
   "author": "Encoresky Technology",
