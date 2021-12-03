@@ -85,7 +85,11 @@
     "text-char-limit",
     "javascript",
     "Est",
-    "Encoresky Technologies pvt ltd"
+    "Encoresky Technologies pvt ltd",
+    "reactjs", 
+    "input hint", 
+    "character limit", 
+    "maximum character limit"
   ],
   "author": "Encoresky Technology",
   "license": "MIT",
