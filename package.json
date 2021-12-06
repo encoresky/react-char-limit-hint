@@ -1,5 +1,5 @@
 {
-  "name": "@encoreskytech/react-char-limit-hint-input",
+  "name": "@encoreskytech/react-char-limit-hint",
   "version": "1.0.7",
   "private": false,
   "main": "dist/index.js",
@@ -77,7 +77,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/encoresky/react-char-limit-hint-input.git"
+    "url": "https://github.com/encoresky/react-char-limit-hint.git"
   },
   "keywords": [
     "react",
@@ -94,7 +94,7 @@
   "author": "Encoresky Technology",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/encoresky/react-char-limit-hint-input/issues"
+    "url": "https://github.com/encoresky/react-char-limit-hint/issues"
   },
-  "homepage": "https://github.com/encoresky/react-char-limit-hint-input#readme"
+  "homepage": "https://github.com/encoresky/react-char-limit-hint#readme"
 }
