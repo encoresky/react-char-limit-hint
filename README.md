@@ -3,15 +3,15 @@
 ## Installation
 
 ```
-npm i @encoreskytech/text-char-limit-hint
+npm i @encoreskytech/react-char-limit-hint
 or
-yarn add @encoreskytech/text-char-limit-hint
+yarn add @encoreskytech/react-char-limit-hint
 ```
 
 ## Examples
 
 ```
-import NodeCharLimitInput from "@encoreskytech/react-char-limit-hint-input";
+import NodeCharLimitInput from "@encoreskytech/react-char-limit-hint";
 
 function App() {
   return (
