@@ -11,11 +11,11 @@ yarn add @encoreskytech/react-char-limit-hint
 ## Examples
 
 ```
-import NodeCharLimitInput from "@encoreskytech/react-char-limit-hint";
+import CharLimitInput from "@encoreskytech/react-char-limit-hint";
 
 function App() {
   return (
-    <NodeCharLimitInput charLimit={11} />
+    <CharLimitInput charLimit={11} />
   );
 }
 ```
