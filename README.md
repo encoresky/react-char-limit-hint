@@ -20,6 +20,17 @@ function App() {
 }
 ```
 
+Example with textarea
+```
+import CharLimitInput from "@encoreskytech/react-char-limit-hint";
+
+function App() {
+  return (
+    <CharLimitInput charLimit={11} asTextArea />
+  );
+}
+```
+
 ## Props
 
 | Property                 | Type `(Default)`                                                   | Description                                                                                                             |
@@ -29,6 +40,7 @@ function App() {
 | inputStyle | string                                                     | ClassName for input component                                              |
 | hintStyle | string                                                     | ClassName for hint text component                                              |
 | onChange               | (text) => void                      | callback function 
+| asTextArea           | boolean (default false) | Enable to use it as textarea
 
 ## Contributor
 [Vishal Chaturvedi](https://github.com/vishai12345)

@@ -1,14 +1,19 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from "react"
+import PropTypes from "prop-types"
 
-export default function CharLimitInput({ onChange, charLimit, ...props }) {
+export default function CharLimitInput({
+  onChange,
+  charLimit,
+  asTextArea,
+  ...props
+}) {
   const parsedIntCharLimit = parseInt(charLimit || 10) || 10;
 
   const [value, setValue] = React.useState("")
   const [remainingCount, setRemainingCount] = React.useState(parsedIntCharLimit)
 
   React.useEffect(() => {
-    if(value.length > parsedIntCharLimit) {
+    if (value.length > parsedIntCharLimit) {
       const remainingText = value.slice(0, parsedIntCharLimit)
 
       setValue(remainingText);
@@ -16,13 +21,13 @@ export default function CharLimitInput({ onChange, charLimit, ...props }) {
       setRemainingCount(parsedIntCharLimit - remainingText.length);
     } else {
       const remaining_count = parsedIntCharLimit - value.length;
-      setRemainingCount(remaining_count > -1 ? remaining_count: 0);
+      setRemainingCount(remaining_count > -1 ? remaining_count : 0);
     }
   }, [parsedIntCharLimit])
 
   const onTextChange = event => {
     const remaining_count = parsedIntCharLimit - event.target.value.length;
-    if(remaining_count < 0) return false;
+    if (remaining_count < 0) return false;
 
     setRemainingCount(remaining_count);
     setValue(event.target.value)
@@ -31,9 +36,17 @@ export default function CharLimitInput({ onChange, charLimit, ...props }) {
 
   const { hintStyle, inputStyle, parentContainerStyle, ...restProps } = props;
 
+  const tagProps = {
+    className: inputStyle,
+    value,
+    onChange: onTextChange,
+    maxLength: parsedIntCharLimit,
+    ...restProps
+  }
+
   return (
     <div className={parentContainerStyle}>
-      <input className={inputStyle} value={value} onChange={onTextChange} maxLength={parsedIntCharLimit} {...restProps} />
+      {asTextArea ? <textarea {...tagProps} /> : <input {...tagProps} />}
       <span className={hintStyle}>{remainingCount} words are remaining</span>
     </div>
   );
@@ -45,8 +58,10 @@ CharLimitInput.propTypes = {
   inputStyle: PropTypes.string,
   hintStyle: PropTypes.string,
   onChange: PropTypes.func,
+  asTextArea: PropTypes.number,
 };
 
 CharLimitInput.defaultProps = {
   onChange: undefined,
+  asTextArea: false,
 };
