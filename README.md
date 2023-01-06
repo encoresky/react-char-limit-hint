@@ -20,6 +20,17 @@ function App() {
 }
 ```
 
+Example with textarea
+```
+import CharLimitInput from "@encoreskytech/react-char-limit-hint";
+
+function App() {
+  return (
+    <CharLimitInput charLimit={11} asTextArea />
+  );
+}
+```
+
 ## Props
 
 | Property                 | Type `(Default)`                                                   | Description                                                                                                             |
